@@ -11,10 +11,11 @@
 | name                   | string | null: false             |
 | your_name(kana)        | string | null: false             |
 | date_of_birth          | string | null: false             |
+
 ### Association
 
 - has_many :products 
-- has_many :purchasets
+- has_many :purchases
 
 ## products テーブル
 
@@ -25,13 +26,14 @@
 | days_to_ship                  | string     | null: false                    |
 | price                         | string     | null: false                    |
 | user                          | references | null: false, foreign_key: true |
+
 ### Association
 
-- has_many :shipping addresss
-- belongs_to :users
-- has_one :purchasets
+- has_many :shipping_addresses
+- belongs_to :user
+- has_one :purchase
 
-## purchasets テーブル
+## purchases テーブル
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
@@ -41,11 +43,11 @@
 
 ### Association
 
-- belongs_to :products
-- belongs_to :users
-- belongs_to :shipping addresss
+- belongs_to :product
+- belongs_to :user
+- belongs_to :shipping_address
 
-## shipping addresss テーブル
+## shipping_addresses テーブル
 
 | Column            | Type       | Options                        |
 | ------------------| ---------- | ------------------------------ |
@@ -61,4 +63,4 @@
 ### Association
 
 - has_many :products
-- has_one  :purchasets
+- has_one  :purchase
