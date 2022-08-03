@@ -1,7 +1,9 @@
-　# テーブル設計
+# README
+
+
+
 
 ## users テーブル
-
 | Column                 | Type   | Options                 |
 | ---------------------- | ------ | ----------------------- |
 | nickname               | string | null: false             |
@@ -61,4 +63,5 @@
 ### Association
 
 - has_many :products
-- has_one  :purchasets
+- has_one  :purchase
+
