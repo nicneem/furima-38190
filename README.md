@@ -1,7 +1,9 @@
-　# テーブル設計
+# README
+
+
+
 
 ## users テーブル
-
 | Column                 | Type   | Options                 |
 | ---------------------- | ------ | ----------------------- |
 | nickname               | string | null: false             |
@@ -64,3 +66,4 @@
 
 - has_many :products
 - has_one  :purchase
+
