@@ -26,8 +26,8 @@
 | -------------------------------- | ---------- | ------------------------------ |
 | product_name                     | string     | null: false                    |
 | product_description              | text       | null: false                    |
-| category                         | integer    | null: false                    |
-| commodity_condition              | integer    | null: false                    |
+| category_id                      | integer    | null: false                    |
+| commodity_condition_id           | integer    | null: false                    |
 | burden_of_shipping_charges_id    | integer    | null: false                    |
 | shipping_area_id                 | integer    | null: false                    |
 | days_to_ship_id                  | integer    | null: false                    |
