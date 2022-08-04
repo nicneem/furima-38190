@@ -9,9 +9,12 @@
 | nickname               | string | null: false             |
 | email                  | string | null: false, :unique    |
 | encrypted_password     | string | null: false             |
-| name                   | string | null: false             |
-| your_name_kana         | string | null: false             |
+| first_name             | string | null: false             |
+| last_name              | string | null: false             |
+| first_name_kana        | string | null: false             |
+| last_name_kana         | string | null: false             |
 | date_of_birth          | date   | null: false             |
+
 ### Association
 
 - has_many :products 
@@ -26,7 +29,7 @@
 | days_to_ship_id                  | integer    | null: false                    |
 | price                            | integer    | null: false                    |
 | seller                           | string     | null: false                    |
-| user                             | references | null: false, foreign_key: true |
+| user_id                          | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :user
@@ -36,15 +39,14 @@
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| shipping_address      | references | null: false, foreign_key: true |
-| product               | references | null: false, foreign_key: true |
-| user                  | references | null: false, foreign_key: true |
+| product_id            | references | null: false, foreign_key: true |
+| user_id               | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :product
 - belongs_to :user
-- has_one :shipping address
+- has_one :shipping_address
 
 ## shipping addresses テーブル
 
@@ -61,6 +63,6 @@
 
 ### Association
 
-- has_many :products
-- has_one  :purchase
+- belongs_to :users
+- belongs_to :purchase
 
