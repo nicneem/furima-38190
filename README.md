@@ -7,33 +7,32 @@
 | Column                 | Type   | Options                 |
 | ---------------------- | ------ | ----------------------- |
 | nickname               | string | null: false             |
-| email_address          | string | null: false             |
-| password               | string | null: false             |
-| password_confirmation  | string | null: false             |
+| email                  | string | null: false, :unique    |
+| encrypted_password     | string | null: false             |
 | name                   | string | null: false             |
-| your_name(kana)        | string | null: false             |
-| date_of_birth          | string | null: false             |
+| your_name_kana         | string | null: false             |
+| date_of_birth          | date   | null: false             |
 ### Association
 
 - has_many :products 
-- has_many :purchasets
+- has_many :purchases
 
 ## products テーブル
 
-| Column                        | Type       | Options                        |
-| ----------------------------- | ---------- | ------------------------------ |
-| burden_of_shipping_charges    | string     | null: false                    |
-| shipping_area                 | string     | null: false                    |
-| days_to_ship                  | string     | null: false                    |
-| price                         | string     | null: false                    |
-| user                          | references | null: false, foreign_key: true |
+| Column                           | Type       | Options                        |
+| -------------------------------- | ---------- | ------------------------------ |
+| burden_of_shipping_charges_id    | integer    | null: false                    |
+| shipping_area_id                 | integer    | null: false                    |
+| days_to_ship_id                  | integer    | null: false                    |
+| price                            | integer    | null: false                    |
+| seller                           | string     | null: false                    |
+| user                             | references | null: false, foreign_key: true |
 ### Association
 
-- has_many :shipping addresss
-- belongs_to :users
-- has_one :purchasets
+- belongs_to :user
+- belongs_to :purchases
 
-## purchasets テーブル
+## purchases テーブル
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
@@ -43,20 +42,20 @@
 
 ### Association
 
-- belongs_to :products
-- belongs_to :users
-- belongs_to :shipping addresss
+- belongs_to :product
+- belongs_to :user
+- has_one :shipping address
 
-## shipping addresss テーブル
+## shipping addresses テーブル
 
 | Column            | Type       | Options                        |
 | ------------------| ---------- | ------------------------------ |
 | payment_amount    | string     | null: false                    |
 | post_code         | string     | null: false                    |
-| prefectures       | string     | null: false                    |
+| prefectures_id    | integer    | null: false                    |
 | municipalities    | string     | null: false                    |
 | address           | string     | null: false                    |
-| building_name     | string     | null: false                    |
+| building_name     | string     |                                |
 | phone_number      | string     | null: false                    |
 
 
