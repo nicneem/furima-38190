@@ -24,7 +24,6 @@
 
 | Column                           | Type       | Options                        |
 | -------------------------------- | ---------- | ------------------------------ |
-| product_image                    | integer    | null: false                    |
 | product_name                     | integer    | null: false                    |
 | product_description              | integer    | null: false                    |
 | burden_of_shipping_charges_id    | integer    | null: false                    |
