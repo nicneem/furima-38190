@@ -24,8 +24,10 @@
 
 | Column                           | Type       | Options                        |
 | -------------------------------- | ---------- | ------------------------------ |
-| product_name                     | integer    | null: false                    |
-| product_description              | integer    | null: false                    |
+| product_name                     | string     | null: false                    |
+| product_description              | text       | null: false                    |
+| category                         | integer    | null: false                    |
+| commodity_condition              | integer    | null: false                    |
 | burden_of_shipping_charges_id    | integer    | null: false                    |
 | shipping_area_id                 | integer    | null: false                    |
 | days_to_ship_id                  | integer    | null: false                    |
@@ -37,7 +39,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :purchase
+- has_one :purchase
 
 ## purchases テーブル
 
@@ -56,14 +58,13 @@
 
 | Column            | Type       | Options                        |
 | ------------------| ---------- | ------------------------------ |
-| payment_amount    | string     | null: false                    |
 | post_code         | string     | null: false                    |
-| prefectures_id    | integer    | null: false                    |
 | municipalities    | string     | null: false                    |
 | address           | string     | null: false                    |
 | building_name     | string     |                                |
 | phone_number      | string     | null: false                    |
-
+| purchase          | references | null: false, foreign_key: true |
+| shipping_area_id  | integer    | null: false                    |
 
 ### Association
 
