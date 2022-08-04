@@ -24,9 +24,9 @@
 
 | Column                           | Type       | Options                        |
 | -------------------------------- | ---------- | ------------------------------ |
-| burden_of_shipping_charges_id    | integer    | null: false                    |
-| shipping_area_id                 | integer    | null: false                    |
-| days_to_ship_id                  | integer    | null: false                    |
+| burden_of_shipping_charges_id    | integer    | null: false, foreign_key: true |
+| shipping_area_id                 | integer    | null: false, foreign_key: true |
+| days_to_ship_id                  | integer    | null: false, foreign_key: true |
 | price                            | integer    | null: false                    |
 | seller                           | string     | null: false                    |
 | user_id                          | references | null: false, foreign_key: true |
@@ -54,7 +54,7 @@
 | ------------------| ---------- | ------------------------------ |
 | payment_amount    | string     | null: false                    |
 | post_code         | string     | null: false                    |
-| prefectures_id    | integer    | null: false                    |
+| prefectures_id    | integer    | null: false, foreign_key: true |
 | municipalities    | string     | null: false                    |
 | address           | string     | null: false                    |
 | building_name     | string     |                                |
@@ -63,6 +63,5 @@
 
 ### Association
 
-- belongs_to :users
 - belongs_to :purchase
 
