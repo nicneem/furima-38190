@@ -80,7 +80,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password is invalid")
     end
 
-    it 'passwordが全角では登録できないこと' do
+    it 'passwordが日本語やカタカナでは登録できないこと' do
       @user.password = 'ABC123'
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
