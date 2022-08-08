@@ -81,9 +81,9 @@ RSpec.describe User, type: :model do
     end
 
     it 'passwordが日本語やカタカナでは登録できないこと' do
-      @user.password = 'ABC123'
+      @user.password = 'あいうアイウ漢字'
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      expect(@user.errors.full_messages).to include("Password is invalid")
     end
 
     it "last_nameがない場合は登録できないこと" do
