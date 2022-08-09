@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :day do
+  factory :deliverycost do
     
   end
 end

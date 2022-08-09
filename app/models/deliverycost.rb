@@ -1,5 +1,4 @@
-class Load < ApplicationRecord
-  class Genre < ActiveHash::Base
+class Deliverycost < ActiveHash::Base
     self.data = [
       { id: 1, item_status: '---' },
       { id: 2, item_status: '着払い(購入者負担)' },
@@ -10,4 +9,3 @@ class Load < ApplicationRecord
     include ActiveHash::Associations
     has_many :items
   end
-end

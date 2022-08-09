@@ -1,5 +1,4 @@
-class Day < ApplicationRecord
-  class Genre < ActiveHash::Base
+class DeliveryDay < ActiveHash::Base
     self.data = [
       { id: 1, item_status: '---' },
       { id: 2, item_status: '1~2日で発送' },
@@ -11,4 +10,4 @@ class Day < ApplicationRecord
     include ActiveHash::Associations
     has_many :items
   end
-end
+
