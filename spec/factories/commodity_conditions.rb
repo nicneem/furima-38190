@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :deliverycost do
+  factory :commodity_condition do
     
   end
 end
