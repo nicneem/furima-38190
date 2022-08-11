@@ -1,4 +1,4 @@
-class Pref < ActiveHash::Base
+class ShippingArea < ActiveHash::Base
     self.data = [
       { id: 1, item_status: '---' },
       { id: 2, item_status: '北海道' },
