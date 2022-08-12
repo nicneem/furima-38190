@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   validates :image, presence: true
-  validates :product_name, :product_description,  :user_id, presence: true
+  validates :product_name, :product_description,  presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   
   with_options numericality: { other_than: 1, message: "can't be blank" } do
@@ -10,9 +10,10 @@ class Item < ApplicationRecord
   end
 
   has_one_attached :image
+  has_one_attached :images_presence
+ 
   belongs_to :user
 
-  
   belongs_to :category
 
 end
