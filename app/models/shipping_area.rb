@@ -47,7 +47,7 @@
       { id: 45, item_status: '大分' },
       { id: 46, item_status: '宮崎' },
       { id: 47, item_status: '鹿児島' },
-      { id: 48, item_status: '沖縄' },
+      { id: 48, item_status: '沖縄' }
      
     ]
   
