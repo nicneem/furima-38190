@@ -130,8 +130,8 @@
 
        
       <% if @items.present? %>
-      <li class='list'>
       <% @items.each do |item| %>
+      <li class='list'>
         <%= link_to  item_path(item.id) do %>
         <div class='item-img-content'>
           <%= image_tag item.image if item.image.attached? %>
@@ -159,7 +159,7 @@
           </div>
         </div>
         <% end %>
-         
+      <li>  
       
    
       
