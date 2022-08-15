@@ -10,6 +10,7 @@ class Item < ApplicationRecord
   end
 
   has_one_attached :image
+  #has_one :purchase
   
   belongs_to :burden_of_shipping_charges
   belongs_to :commodity_condition
