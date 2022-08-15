@@ -32,7 +32,6 @@
               <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
             <p class="or-text">or</p>
              <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
-         </div>
           <% else %>
         <%# elsif @item.purchace.blank? %>
             <%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
@@ -109,6 +108,6 @@
   
   <a href="#" class="another-item"><%= @item.category.item_status%>をもっと見る</a>
 
-</div>
+ </div> 
 
 <%= render "shared/footer" %>
