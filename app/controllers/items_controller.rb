@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless current_user.id == @item.user_id
   end
 
   def update
@@ -57,8 +56,6 @@ class ItemsController < ApplicationController
   end
 
   def ensure_user
-    @items = current_user.posts
-    @item = @items.find_by(id: params[:id])
-    redirect_to root_path unless @item
+    redirect_to root_path unless current_user.id == @item.user_id
   end
 end

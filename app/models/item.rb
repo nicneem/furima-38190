@@ -18,5 +18,6 @@ class Item < ApplicationRecord
   belongs_to :shipping_area
   belongs_to :user
   belongs_to :category
+  
 
 end
