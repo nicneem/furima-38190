@@ -34,10 +34,18 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
+  end
+  
   #def set_item
    # @item =Item.find(params[:id])
   #end
-
 
   private
   def items_params
