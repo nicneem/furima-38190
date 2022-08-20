@@ -11,9 +11,13 @@ RSpec.describe OrdersForm, type: :model do
     
     sleep 0.1
   end
- 
   
-  
+  context '内容に問題ない場合' do
+    it "tokenがあれば保存ができること" do
+      expect(@orders_form).to be_valid
+    end
+  end
+
   describe 'ユーザー商品購入機能' do
     context '商品購入できるとき' do
       it '正常に購入できる' do
@@ -26,7 +30,15 @@ RSpec.describe OrdersForm, type: :model do
   end
 end
 
-    context '商品購入できないとき' do
+context '内容に問題がある場合' do
+ 
+  it "tokenが空では登録できないこと" do
+    @orders_form.token = nil
+    @orders_form.valid?
+    expect(@orders_form.errors.full_messages).to include("Token can't be blank")
+  end
+end
+context '商品購入できないとき' do
       
       
       it 'post_codeが空では投稿できない' do

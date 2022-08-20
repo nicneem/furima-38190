@@ -3,7 +3,7 @@ class OrdersForm
   attr_accessor :item_id, :user_id, :post_code, :municipalities, :address, :building_name, :phone_number, :purchase_id, :shipping_area_id, :token
 
   with_options presence: true do
-  #validates :token
+  validates :token
   validates :item_id
   validates :user_id
   validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "例）123-4567"}
