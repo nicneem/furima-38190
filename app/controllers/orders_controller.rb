@@ -4,14 +4,9 @@ class OrdersController < ApplicationController
   
   def index
     @order = OrdersForm.new
-    if current_user == @item.user
-      redirect_to root_path
-    end
     
-    if @item.purchase.present?
-        return redirect_to root_path
-     end  
-  end
+     return redirect_to root_path if current_user.id == @item.user_id || @item.purchase.present?
+    end
   
 def create
     @order = OrdersForm.new(order_params)
