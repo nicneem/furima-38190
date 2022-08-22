@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!,only: [:new, :edit, :destroy]
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_item, only: [:show, :edit, :update, :destroy, ]
   before_action :ensure_user, only: [:edit, :update, :destroy]
  
   def index
@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+   if @item.purchase.present?
+     return redirect_to root_path
+    end
   end
 
   def update
@@ -42,9 +45,7 @@ class ItemsController < ApplicationController
     end
   end
   
-  #def set_item
-   # @item =Item.find(params[:id])
-  #end
+  
 
   private
   def items_params
