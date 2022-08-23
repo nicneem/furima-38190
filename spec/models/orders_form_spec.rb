@@ -77,13 +77,13 @@ RSpec.describe OrdersForm, type: :model do
         expect(@orders_form.errors.full_messages).to include ("Phone number can't be blank")
       end
 
-      it '電話番号が10桁以下では投稿できない' do
+      it '電話番号が9桁以下では投稿できない' do
         @orders_form.phone_number= '090123456'
         @orders_form.valid?
         expect(@orders_form.errors.full_messages).to include ("Phone number is invalid")
       end
       
-      it '電話番号が11桁以上では投稿できない' do
+      it '電話番号が12桁以上では投稿できない' do
         @orders_form.phone_number= '0901234567891'
         @orders_form.valid?
         expect(@orders_form.errors.full_messages).to include ("Phone number is invalid")

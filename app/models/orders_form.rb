@@ -1,6 +1,6 @@
 class OrdersForm
   include ActiveModel::Model
-  attr_accessor :item_id, :user_id, :post_code, :municipalities, :address, :building_name, :phone_number, :purchase_id, :shipping_area_id, :token
+  attr_accessor :item_id, :user_id, :post_code, :municipalities, :address, :building_name, :phone_number, :shipping_area_id, :token
 
   with_options presence: true do
   validates :token
@@ -16,7 +16,7 @@ end
   def save
     purchase = Purchase.create(item_id:item_id, user_id:user_id)
     
-    ShippingAddress.create(shipping_area_id: shipping_area_id, post_code: post_code, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number)
+    ShippingAddress.create(shipping_area_id: shipping_area_id, post_code: post_code, municipalities: municipalities, address: address, building_name: building_name, phone_number: phone_number, purchase_id: purchase.id)
  
     end
   end
