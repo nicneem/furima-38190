@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+   if @item.purchase.present?
+     return redirect_to root_path
+    end
   end
 
   def update
@@ -42,9 +45,7 @@ class ItemsController < ApplicationController
     end
   end
   
-  #def set_item
-   # @item =Item.find(params[:id])
-  #end
+  
 
   private
   def items_params
